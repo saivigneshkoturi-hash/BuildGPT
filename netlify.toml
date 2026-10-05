@@ -1,0 +1,19 @@
+# BuildGPT — Netlify
+# Nitro writes the public site to "dist" (not dist/client). If the Netlify UI
+# still shows dist/client, change Site configuration → Build settings → Publish
+# directory to dist, then redeploy.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  VITE_AUTH_ENABLED = "true"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["migrations/**"]
+
+[functions."*"]
+  timeout = 26

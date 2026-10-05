@@ -1,0 +1,10 @@
+.data/
+.env
+.env.*
+.vercel/
+.netlify/
+node_modules/
+dist/
+screenshots/
+artifacts/
+*.log
